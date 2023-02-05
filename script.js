@@ -39,3 +39,18 @@ for (const button of buttons) {
   button.addEventListener("click", createRipple);
 }
 
+const shareButton = document.getElementById("share")
+
+const shareData = {
+	url: "https://valiantwind.github.io/mct",
+	text: "Check out this Morse Code to English Translator I used",
+}
+
+shareButton.addEventListener("click", function() {
+	if(navigator.canShare){
+		navigator.share(shareData)
+	} else {
+		window.alert("Your browser does not support sharing.")
+	}
+})
+
